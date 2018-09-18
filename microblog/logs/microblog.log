@@ -1,4 +1,4 @@
-2018-09-14 14:49:02,236 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTE1MzUuMjA4NjA1MywicmVzZXRfcGFzc3dvcmQiOjJ9.U6ahMs4pzQHVXuVhZr9XxTvMkkxty9gMXJhrlwysQr8 [GET] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
+2018-09-16 10:49:42,819 ERROR: Exception on /login [GET] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,46 +12,63 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/routes.py", line 174, in reset_password
-    return render_template('reset_password.html', form=form)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 134, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/routes.py", line 46, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/templates/reset_password.html", line 11, in template
-    {% endfor %}
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 144, in parse_statement
-    self.fail_unknown_tag(token.value, token.lineno)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 97, in fail_unknown_tag
-    return self._fail_ut_eof(name, self._end_token_stack, lineno)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
-    self.fail(' '.join(message), lineno)
-  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 59, in fail
-    raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/templates/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'boostrap/base.html' %}
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: boostrap/base.html
+2018-09-16 10:49:43,583 ERROR: Exception on /login [GET] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/routes.py", line 46, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/templates/login.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'boostrap/base.html' %}
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: boostrap/base.html
+2018-09-16 10:49:58,918 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:48]
+2018-09-16 11:03:33,007 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:48]
+2018-09-16 11:10:29,879 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-16 11:11:06,221 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
