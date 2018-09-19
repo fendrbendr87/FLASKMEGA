@@ -1,0 +1,66 @@
+2018-09-19 11:15:07,198 ERROR: Exception on /register [POST] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/routes.py", line 58, in register
+    if form.validate_on_submit():
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 206, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/wtforms/fields/core.py", line 226, in _run_validation_chain
+    validator(form, self)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/forms.py", line 20, in validate_username
+    user = User.query.filter_by(username=username.data).first()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2888, in first
+    ret = list(self[0:1])
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2680, in __getitem__
+    return list(res)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2988, in __iter__
+    return self._execute_and_instances(context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3011, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: ('gene', 1, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-09-19 11:18:27,021 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-19 11:18:50,468 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]

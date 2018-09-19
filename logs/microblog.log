@@ -1,0 +1,102 @@
+2018-09-19 11:19:04,567 ERROR: Exception on /login [POST] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/routes.py", line 37, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2888, in first
+    ret = list(self[0:1])
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2680, in __getitem__
+    return list(res)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 2988, in __iter__
+    return self._execute_and_instances(context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3011, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
+    context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 265, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 248, in reraise
+    raise value.with_traceback(tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
+    context)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 509, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.username = ?\n LIMIT ? OFFSET ?'] [parameters: ('susan', 1, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-09-19 11:20:19,223 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-19 11:20:47,414 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-19 11:21:01,977 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-19 11:21:12,295 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-19 11:21:56,469 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-19 11:26:25,610 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-19 11:26:30,575 ERROR: Exception on /login [POST] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/routes.py", line 38, in login
+    if user is None or not user.check_password(form.password.data):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/models.py", line 28, in check_password
+    return check_password_hash(self.password_hash, password)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/werkzeug/security.py", line 245, in check_password_hash
+    if pwhash.count('$') < 2:
+AttributeError: 'NoneType' object has no attribute 'count'
+2018-09-19 11:26:36,087 ERROR: Exception on /login [POST] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/routes.py", line 38, in login
+    if user is None or not user.check_password(form.password.data):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/models.py", line 28, in check_password
+    return check_password_hash(self.password_hash, password)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/werkzeug/security.py", line 245, in check_password_hash
+    if pwhash.count('$') < 2:
+AttributeError: 'NoneType' object has no attribute 'count'
+2018-09-19 11:29:00,106 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-19 11:32:36,942 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
