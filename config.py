@@ -12,3 +12,10 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['bytegene1@gmail.com']
     POSTS_PER_PAGE=25
+    LANGUAGES = ['en', 'es']
+    #static email information
+    #MAIL_SERVER='smtp.googlemail.com'
+    #MAIL_PORT='587'
+    #MAIL_USE_TLS='1'
+    #MAIL_USERNAME='bytegene1@gmail.com'
+    #MAIL_PASSWORD='Phantom111'
