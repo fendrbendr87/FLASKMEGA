@@ -100,3 +100,9 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'count'
 2018-09-19 11:29:00,106 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
 2018-09-19 11:32:36,942 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:50]
+2018-09-21 23:25:58,515 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:68]
+2018-09-21 23:30:44,158 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:68]
+2018-09-21 23:41:37,530 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:68]
+2018-09-21 23:42:57,641 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:68]
+2018-09-21 23:55:34,586 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:68]
+2018-09-21 23:59:50,646 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:68]
