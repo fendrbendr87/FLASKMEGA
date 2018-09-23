@@ -1,4 +1,4 @@
-2018-09-14 14:46:33,109 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTEzODQuODg4MjA3NCwicmVzZXRfcGFzc3dvcmQiOjJ9.oDz0mD5zo-VKrA8yo314MA4WOB9GXU-87cSz4y6rhkw [GET] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
+2018-09-14 14:49:02,236 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTE1MzUuMjA4NjA1MywicmVzZXRfcGFzc3dvcmQiOjJ9.U6ahMs4pzQHVXuVhZr9XxTvMkkxty9gMXJhrlwysQr8 [GET] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -55,4 +55,59 @@ Traceback (most recent call last):
   File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2018-09-14 14:48:47,518 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:46]
+2018-09-16 10:15:12,402 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:46]
+2018-09-16 10:15:45,141 ERROR: Exception on /reset_password_request [POST] [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask_mail.py", line 427, in send
+    connection.send(self)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask_mail.py", line 192, in send
+    message.rcpt_options)
+  File "/usr/lib/python3.5/smtplib.py", line 847, in sendmail
+    self.ehlo_or_helo_if_needed()
+  File "/usr/lib/python3.5/smtplib.py", line 599, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+  File "/usr/lib/python3.5/smtplib.py", line 439, in ehlo
+    self.putcmd(self.ehlo_msg, name or self.local_hostname)
+  File "/usr/lib/python3.5/smtplib.py", line 366, in putcmd
+    self.send(str)
+  File "/usr/lib/python3.5/smtplib.py", line 358, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/routes.py", line 155, in reset_password_request
+    send_password_reset_email(user)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/email.py", line 19, in send_password_reset_email
+    user=user, token=token))
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/email.py", line 9, in send_email
+    mail.send(msg)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask_mail.py", line 492, in send
+    message.send(connection)
+  File "/mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/venv/lib/python3.5/site-packages/flask_mail.py", line 152, in __exit__
+    self.host.quit()
+  File "/usr/lib/python3.5/smtplib.py", line 978, in quit
+    res = self.docmd("quit")
+  File "/usr/lib/python3.5/smtplib.py", line 419, in docmd
+    self.putcmd(cmd, args)
+  File "/usr/lib/python3.5/smtplib.py", line 366, in putcmd
+    self.send(str)
+  File "/usr/lib/python3.5/smtplib.py", line 358, in send
+    raise SMTPServerDisconnected('please run connect() first')
+smtplib.SMTPServerDisconnected: please run connect() first
+2018-09-16 10:17:57,381 INFO: Microblog startup [in /mnt/c/Users/GM/Desktop/FLASKMEGA/microblog/app/__init__.py:46]
